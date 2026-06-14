@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+pydantic
+python-multipart
+yfinance
+pandas
+scipy
+python-dotenv
+google-generativeai
+scikit-learn
+xgboost
+firebase-admin
+pyjwt
+cryptography
+requests

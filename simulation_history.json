@@ -1,0 +1,240 @@
+[
+  {
+    "id": "sim-188546",
+    "timestamp": "2026-06-10T02:43:24.745871",
+    "symbol": "AAPL",
+    "name": "Demo Trade: Apple (AAPL)",
+    "is_custom": true,
+    "starting_balance": 10000.32,
+    "ending_balance": 10000.32,
+    "net_return": 0.0,
+    "trade_count": 0,
+    "scores": {
+      "discipline": 100,
+      "execution": 100,
+      "stability": 100
+    },
+    "email": "ganesh442006@gmail.com"
+  },
+  {
+    "id": "sim-291344",
+    "timestamp": "2026-06-10T01:22:39.616305",
+    "symbol": "AAPL",
+    "name": "Demo Trade: Apple (AAPL)",
+    "is_custom": true,
+    "starting_balance": 10000.0,
+    "ending_balance": 10000.32,
+    "net_return": 0.32,
+    "trade_count": 1,
+    "scores": {
+      "discipline": 85,
+      "execution": 100,
+      "stability": 100
+    },
+    "email": "ganesh442006@gmail.com"
+  },
+  {
+    "id": "sim-149100",
+    "timestamp": "2026-06-10T00:11:21.929328",
+    "symbol": "AAPL",
+    "name": "Demo Trade: Apple (AAPL)",
+    "is_custom": true,
+    "starting_balance": 10000.0,
+    "ending_balance": 10000.0,
+    "net_return": 0.0,
+    "trade_count": 0,
+    "scores": {
+      "discipline": 100,
+      "execution": 100,
+      "stability": 100
+    },
+    "email": "ganesh442006@gmail.com"
+  },
+  {
+    "id": "sim-978893",
+    "timestamp": "2026-06-01T23:36:20.289432",
+    "symbol": "AAPL",
+    "name": "Demo Trade: Apple (AAPL)",
+    "is_custom": true,
+    "starting_balance": 10000.0,
+    "ending_balance": 10000.0,
+    "net_return": 0.0,
+    "trade_count": 0,
+    "scores": {
+      "discipline": 100,
+      "execution": 100,
+      "stability": 100
+    },
+    "email": "ganesh442006@gmail.com"
+  },
+  {
+    "id": "sim-821942",
+    "timestamp": "2026-05-29T21:13:43.838288",
+    "symbol": "AMD",
+    "name": "Demo Trade: AMD (AMD)",
+    "is_custom": true,
+    "starting_balance": 10000.0,
+    "ending_balance": 10000.0,
+    "net_return": 0.0,
+    "trade_count": 0,
+    "scores": {
+      "discipline": 100,
+      "execution": 100,
+      "stability": 100
+    },
+    "email": "guest@trademind.com"
+  },
+  {
+    "id": "sim-748756",
+    "timestamp": "2026-05-26T21:51:53.632094",
+    "symbol": "AAPL",
+    "name": "Demo Trade: Apple (AAPL)",
+    "is_custom": true,
+    "starting_balance": 10193.04,
+    "ending_balance": 10193.04,
+    "net_return": 0.0,
+    "trade_count": 0,
+    "scores": {
+      "discipline": 100,
+      "execution": 100,
+      "stability": 100
+    },
+    "email": "ganesh442006@gmail.com"
+  },
+  {
+    "id": "sim-645476",
+    "timestamp": "2026-05-26T08:30:06.154567",
+    "symbol": "WIPRO.NS",
+    "name": "Demo Trade: Wipro (NSE)",
+    "is_custom": true,
+    "starting_balance": 970581.27,
+    "ending_balance": 970581.27,
+    "net_return": 0.0,
+    "trade_count": 0,
+    "scores": {
+      "discipline": 100,
+      "execution": 100,
+      "stability": 100
+    },
+    "email": "ganesh442006@gmail.com"
+  },
+  {
+    "id": "sim-138623",
+    "timestamp": "2026-05-25T13:54:16.158214",
+    "symbol": "revenge-trap",
+    "name": "The Revenge Trap",
+    "is_custom": false,
+    "starting_balance": 9973.53,
+    "ending_balance": 10193.04,
+    "net_return": 219.51,
+    "trade_count": 1,
+    "scores": {
+      "discipline": 85,
+      "execution": 100,
+      "stability": 100
+    },
+    "email": "ganesh442006@gmail.com"
+  },
+  {
+    "id": "sim-350000",
+    "timestamp": "2026-05-25T13:53:55.508273",
+    "symbol": "black-swan",
+    "name": "Black Swan Survival",
+    "is_custom": false,
+    "starting_balance": 9973.53,
+    "ending_balance": 9973.53,
+    "net_return": 0.0,
+    "trade_count": 0,
+    "scores": {
+      "discipline": 100,
+      "execution": 100,
+      "stability": 100
+    },
+    "email": "ganesh442006@gmail.com"
+  },
+  {
+    "id": "sim-492255",
+    "timestamp": "2026-05-25T13:53:31.311838",
+    "symbol": "black-swan",
+    "name": "Black Swan Survival",
+    "is_custom": false,
+    "starting_balance": 9998.53,
+    "ending_balance": 9973.53,
+    "net_return": -25.0,
+    "trade_count": 1,
+    "scores": {
+      "discipline": 85,
+      "execution": 100,
+      "stability": 100
+    },
+    "email": "ganesh442006@gmail.com"
+  },
+  {
+    "id": "sim-345155",
+    "timestamp": "2026-05-25T13:53:03.569596",
+    "symbol": "revenge-trap",
+    "name": "The Revenge Trap",
+    "is_custom": false,
+    "starting_balance": 9998.53,
+    "ending_balance": 9998.53,
+    "net_return": 0.0,
+    "trade_count": 0,
+    "scores": {
+      "discipline": 100,
+      "execution": 100,
+      "stability": 100
+    },
+    "email": "ganesh442006@gmail.com"
+  },
+  {
+    "id": "sim-408211",
+    "timestamp": "2026-05-25T12:34:46.564820",
+    "symbol": "RELIANCE.NS",
+    "name": "Demo Trade: Reliance (NSE)",
+    "is_custom": true,
+    "starting_balance": 952737.05,
+    "ending_balance": 952759.88,
+    "net_return": 22.82,
+    "trade_count": 1,
+    "scores": {
+      "discipline": 85,
+      "execution": 100,
+      "stability": 100
+    },
+    "email": "ganesh442006@gmail.com"
+  },
+  {
+    "id": "sim-976074",
+    "timestamp": "2026-05-25T12:33:37.948273",
+    "symbol": "INFY.NS",
+    "name": "Demo Trade: Infosys (NSE)",
+    "is_custom": true,
+    "starting_balance": 952680.0,
+    "ending_balance": 952687.16,
+    "net_return": 7.16,
+    "trade_count": 2,
+    "scores": {
+      "discipline": 100,
+      "execution": 85,
+      "stability": 100
+    },
+    "email": "ganesh442006@gmail.com"
+  },
+  {
+    "id": "sim-383181",
+    "timestamp": "2026-05-25T11:25:19.599706",
+    "symbol": "TCS.NS",
+    "name": "Demo Trade: TCS (NSE)",
+    "is_custom": true,
+    "starting_balance": 835000.0,
+    "ending_balance": 835023.37,
+    "net_return": 23.37,
+    "trade_count": 1,
+    "scores": {
+      "discipline": 100,
+      "execution": 100,
+      "stability": 100
+    },
+    "email": ""
+  }
+]

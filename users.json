@@ -1,0 +1,19 @@
+{
+  "guest@trademind.com": {
+    "email": "guest@trademind.com",
+    "name": "Guest",
+    "pic": "https://api.dicebear.com/7.x/avataaars/svg?seed=guest@trademind.com&backgroundColor=c0aede",
+    "xp": 18150,
+    "balance": 10000.0
+  },
+  "ganesh442006@gmail.com": {
+    "email": "ganesh442006@gmail.com",
+    "name": "Shyam Ganesh C",
+    "pic": "https://lh3.googleusercontent.com/a/ACg8ocKICKrv2KWYUF7oYPO5CGCg0bC6MOZVOl1WmZMU_JXzqzOszqzm=s96-c",
+    "xp": 25650,
+    "balance": 10000.32,
+    "uid": "juhdMHDIa2V3pRDoW5Rif5kTrlC2",
+    "createdAt": "2026-06-09T20:41:55.250028",
+    "total_scans": 104
+  }
+}

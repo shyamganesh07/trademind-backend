@@ -1,0 +1,125 @@
+Timestamp: 2026-05-25T08:35:02.295148
+VIX: 16.700000762939453
+History Length: 48
+Stock Impacts: [
+  {
+    "symbol": "AAPL",
+    "impact": "+12.7",
+    "val": 12.7,
+    "win_rate": 100.0,
+    "total_trades": 25,
+    "explanation": "Your scans on AAPL show a high success rate of 100.0% across 25 setups, boosting overall portfolio resilience."
+  },
+  {
+    "symbol": "INFY.NS",
+    "impact": "-3.3",
+    "val": -3.3,
+    "win_rate": 0.0,
+    "total_trades": 5,
+    "explanation": "Low win rate (0.0%) on INFY.NS across 5 setups introduces vulnerability, dragging down the survival probability."
+  },
+  {
+    "symbol": "TCS.NS",
+    "impact": "-1.9",
+    "val": -1.9,
+    "win_rate": 0.0,
+    "total_trades": 3,
+    "explanation": "Low win rate (0.0%) on TCS.NS across 3 setups introduces vulnerability, dragging down the survival probability."
+  },
+  {
+    "symbol": "GC=F",
+    "impact": "-0.6",
+    "val": -0.6,
+    "win_rate": 0.0,
+    "total_trades": 1,
+    "explanation": "Low win rate (0.0%) on GC=F across 1 setups introduces vulnerability, dragging down the survival probability."
+  },
+  {
+    "symbol": "ICICIBANK.NS",
+    "impact": "-0.6",
+    "val": -0.6,
+    "win_rate": 0.0,
+    "total_trades": 1,
+    "explanation": "Low win rate (0.0%) on ICICIBANK.NS across 1 setups introduces vulnerability, dragging down the survival probability."
+  },
+  {
+    "symbol": "MSFT",
+    "impact": "-0.6",
+    "val": -0.6,
+    "win_rate": 0.0,
+    "total_trades": 1,
+    "explanation": "Low win rate (0.0%) on MSFT across 1 setups introduces vulnerability, dragging down the survival probability."
+  },
+  {
+    "symbol": "AMZN",
+    "impact": "-0.6",
+    "val": -0.6,
+    "win_rate": 0.0,
+    "total_trades": 1,
+    "explanation": "Low win rate (0.0%) on AMZN across 1 setups introduces vulnerability, dragging down the survival probability."
+  },
+  {
+    "symbol": "GOOGL",
+    "impact": "-0.6",
+    "val": -0.6,
+    "win_rate": 0.0,
+    "total_trades": 1,
+    "explanation": "Low win rate (0.0%) on GOOGL across 1 setups introduces vulnerability, dragging down the survival probability."
+  },
+  {
+    "symbol": "BRK-B",
+    "impact": "+0.2",
+    "val": 0.2,
+    "win_rate": 100.0,
+    "total_trades": 1,
+    "explanation": "Your scans on BRK-B show a high success rate of 100.0% across 1 setups, boosting overall portfolio resilience."
+  },
+  {
+    "symbol": "CL=F",
+    "impact": "+0.2",
+    "val": 0.2,
+    "win_rate": 100.0,
+    "total_trades": 1,
+    "explanation": "Your scans on CL=F show a high success rate of 100.0% across 1 setups, boosting overall portfolio resilience."
+  },
+  {
+    "symbol": "RELIANCE.NS",
+    "impact": "+0.2",
+    "val": 0.2,
+    "win_rate": 100.0,
+    "total_trades": 1,
+    "explanation": "Your scans on RELIANCE.NS show a high success rate of 100.0% across 1 setups, boosting overall portfolio resilience."
+  },
+  {
+    "symbol": "TATASTEEL.NS",
+    "impact": "+0.2",
+    "val": 0.2,
+    "win_rate": 100.0,
+    "total_trades": 1,
+    "explanation": "Your scans on TATASTEEL.NS show a high success rate of 100.0% across 1 setups, boosting overall portfolio resilience."
+  },
+  {
+    "symbol": "WIPRO.NS",
+    "impact": "+0.2",
+    "val": 0.2,
+    "win_rate": 100.0,
+    "total_trades": 1,
+    "explanation": "Your scans on WIPRO.NS show a high success rate of 100.0% across 1 setups, boosting overall portfolio resilience."
+  },
+  {
+    "symbol": "INTC",
+    "impact": "+0.2",
+    "val": 0.2,
+    "win_rate": 100.0,
+    "total_trades": 1,
+    "explanation": "Your scans on INTC show a high success rate of 100.0% across 1 setups, boosting overall portfolio resilience."
+  },
+  {
+    "symbol": "TSLA",
+    "impact": "+0.1",
+    "val": 0.1,
+    "win_rate": 75.0,
+    "total_trades": 4,
+    "explanation": "Your scans on TSLA show a high success rate of 75.0% across 4 setups, boosting overall portfolio resilience."
+  }
+]

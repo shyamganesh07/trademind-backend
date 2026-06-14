@@ -1,0 +1,1 @@
+Error: cannot import name '_session_inst' from 'logic' (C:\Users\ganes\Videos\pdd_pwa\backend\logic.py)
