@@ -1,0 +1,22 @@
+# Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Databases and cache
+*.json
+!academy_videos.json
+*.db
+*.sqlite
+
+# Logs
+*.log
