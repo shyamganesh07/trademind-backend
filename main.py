@@ -306,21 +306,28 @@ def send_otp(email: str):
         smtp_pass = os.environ.get("SMTP_PASS", "")
         
         if smtp_server and smtp_user and smtp_pass and smtp_user != "your_email@gmail.com":
-            msg = MIMEText(f"Your TradeEdge AI verification code is: {otp}")
-            msg['Subject'] = 'TradeEdge AI Login Verification'
-            msg['From'] = smtp_user
-            msg['To'] = email
-            
-            with smtplib.SMTP(smtp_server, smtp_port) as server:
-                server.starttls()
-                server.login(smtp_user, smtp_pass)
-                server.send_message(msg)
-            print(f"[OTP] Email sent to {email}")
+            try:
+                msg = MIMEText(f"Your TradeEdge AI verification code is: {otp}")
+                msg['Subject'] = 'TradeEdge AI Login Verification'
+                msg['From'] = smtp_user
+                msg['To'] = email
+                
+                with smtplib.SMTP(smtp_server, smtp_port, timeout=8.0) as server:
+                    server.starttls()
+                    server.login(smtp_user, smtp_pass)
+                    server.send_message(msg)
+                print(f"[OTP] Email sent to {email}")
+                return {"status": "success", "message": "OTP processed"}
+            except Exception as smtp_err:
+                print(f"[OTP Send Failure] {smtp_err}. Falling back to dev bypass...")
+                raise HTTPException(status_code=400, detail=f"Email delivery failed ({str(smtp_err)}). Development bypass code: {otp}")
         else:
             # Throw an error so the frontend knows setup is required
             raise Exception("SMTP credentials not configured. Please add your Gmail App Password to the backend/.env file.")
             
     except Exception as e:
+        if isinstance(e, HTTPException):
+            raise e
         print(f"[OTP Error] {e}")
         # Send a 400 Bad Request to the frontend so it displays the error
         raise HTTPException(status_code=400, detail=str(e))
@@ -531,21 +538,27 @@ def auth_login(req: EmailPasswordLoginRequest):
         smtp_pass = os.environ.get("SMTP_PASS", "")
         
         if smtp_server and smtp_user and smtp_pass and smtp_user != "your_email@gmail.com":
-            msg = MIMEText(f"Your TradeEdge AI verification code is: {otp}")
-            msg['Subject'] = 'TradeEdge AI Login Verification'
-            msg['From'] = smtp_user
-            msg['To'] = email_clean
-            
-            with smtplib.SMTP(smtp_server, smtp_port) as server:
-                server.starttls()
-                server.login(smtp_user, smtp_pass)
-                server.send_message(msg)
-            print(f"[OTP] Email sent to {email_clean}")
-            return {"status": "success", "message": "OTP processed. Check email."}
+            try:
+                msg = MIMEText(f"Your TradeEdge AI verification code is: {otp}")
+                msg['Subject'] = 'TradeEdge AI Login Verification'
+                msg['From'] = smtp_user
+                msg['To'] = email_clean
+                
+                with smtplib.SMTP(smtp_server, smtp_port, timeout=8.0) as server:
+                    server.starttls()
+                    server.login(smtp_user, smtp_pass)
+                    server.send_message(msg)
+                print(f"[OTP] Email sent to {email_clean}")
+                return {"status": "success", "message": "OTP processed. Check email."}
+            except Exception as smtp_err:
+                print(f"[OTP Send Failure] {smtp_err}. Falling back to dev bypass...")
+                raise HTTPException(status_code=400, detail=f"Email delivery failed ({str(smtp_err)}). Development bypass code: {otp}")
         else:
             print(f"[DEVELOPMENT BYPASS OTP FOR {email_clean}]: {otp}")
             raise HTTPException(status_code=400, detail=f"SMTP not configured. Console code: {otp}")
     except Exception as e:
+        if isinstance(e, HTTPException):
+            raise e
         print(f"[OTP Error] {e}")
         raise HTTPException(status_code=400, detail=str(e))
 
