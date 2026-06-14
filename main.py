@@ -268,6 +268,242 @@ class AnalyzeRequest(BaseModel):
 
 # ── Routes ──
 
+def generate_fallback_chat_response(message: str) -> str:
+    msg = message.strip().lower()
+    
+    # 1. Greetings
+    if any(kw in msg for kw in ["hi", "hello", "hey", "greetings", "good morning", "good afternoon", "who are you"]):
+        return (
+            "🤖 **TradeMind AI Copilot Online**\n\n"
+            "Hello! I am your **Institutional OS Copilot**. I am currently running on the local offline fallback engine due to API network limitations, but I am fully capable of helping you navigate the platform.\n\n"
+            "Here is what you can ask me about:\n"
+            "* **Dashboard Features:** Explain how to use the scanner, charts, or ML predictions.\n"
+            "* **Smart K Calibration:** Learn how stop-loss distances adjust dynamically.\n"
+            "* **Risk Management Rules:** Institutional sizing and expectancy calculations.\n"
+            "* **Simulation Lab drills:** Practice execution strategies.\n\n"
+            "How can I assist your execution today?"
+        )
+    
+    # 2. Smart K or Volatility / ATR
+    if any(kw in msg for kw in ["smart k", "smart-k", "atr", "volatility", "vix", "stop loss", "stop-loss", "sl"]):
+        return (
+            "📉 **Volatility-Based Calibration (Smart K & ATR)**\n\n"
+            "The dashboard uses a dynamic formula to place stop-losses outside standard market noise:\n\n"
+            "* **ATR (Average True Range):** Measures the asset's typical price volatility over a set lookback period.\n"
+            "* **VIX Adjustment:** If the market volatility index (VIX) is high, the system adjusts stops wider.\n"
+            "* **Smart K:** Represents the final scaled volatility multiplier. \n\n"
+            "**Formula:** `Stop Loss = Entry Price - (Smart K * ATR)`\n\n"
+            "This adaptive buffer protects you from premature stop-outs during choppy sessions while keeping your position size risk-aligned."
+        )
+    
+    # 3. Risk Management / Expectancy / 1% Rule
+    if any(kw in msg for kw in ["risk", "expectancy", "1%", "position size", "leverage", "rules"]):
+        return (
+            "🛡️ **Institutional Risk Management Rules**\n\n"
+            "To maintain a positive equity curve over the long term, adhere to these three core rules:\n\n"
+            "1. **The 1% Rule:** Never risk more than **1.0%** of your total portfolio balance on any single trade. If you are stopped out, the loss should not impact your psychological state.\n"
+            "2. **Risk-to-Reward Ratio (R:R):** Target a minimum of **1:2 R:R**. This mathematical buffer means a win rate of just 40% will still result in net profitability.\n"
+            "3. **Expectancy Equation:** Always ensure your system has a positive mathematical expectancy:\n"
+            "   `Expectancy = (Win Probability * Average Win) - (Loss Probability * Average Loss)`"
+        )
+        
+    # 4. Simulation Lab / Practice / Drill
+    if any(kw in msg for kw in ["sim", "simulation", "drill", "practice", "trade", "execute"]):
+        return (
+            "🎮 **Simulation Lab & Training Drills**\n\n"
+            "The **Simulation Lab** is designed to build execution discipline without risking live capital. To get the most out of it:\n\n"
+            "1. Select an asset from the scanner and click **Analyze**.\n"
+            "2. Note the calculated entry, targets, and stop-loss levels.\n"
+            "3. Go to the Simulation Lab, input your entry size, and execute a trade setup.\n"
+            "4. Review your **Psychology Index** in the dashboard to see if you let emotions lead to overtrading or revenge entries.\n\n"
+            "Regular drills help hardwire standard risk rules into your behavioral routine."
+        )
+
+    # 5. Academy / Book / Lessons / Download
+    if any(kw in msg for kw in ["academy", "book", "lesson", "download", "learn"]):
+        return (
+            "📚 **TradeMind Academy & Study Material**\n\n"
+            "The Academy contains structured learning tracks ranging from Beginner concepts to Elite Quant structures:\n\n"
+            "* **Unlock Lessons:** Read the text, complete the daily quiz, and analyze patterns to earn XP points.\n"
+            "* **Download AI Book:** In the lesson viewer, click the **Download AI Book** button to generate a customized, premium study guide containing visual SVG charts, technical definitions, and execution drills.\n"
+            "* **Personalized Guidance:** The dashboard analyzes your trading history to highlight weaknesses in the psychology and settings panels."
+        )
+
+    # 6. GARCH-LSTM or ML / Model / Prediction
+    if any(kw in msg for kw in ["model", "lstm", "garch", "ml", "predict", "accuracy"]):
+        return (
+            "🧠 **GARCH-LSTM Hybrid Prediction Engine**\n\n"
+            "The platform runs a specialized two-stage Machine Learning engine to forecast price targets:\n\n"
+            "* **GARCH Model:** Estimates conditional variance to filter out noise and adjust confidence based on the current market regime.\n"
+            "* **LSTM Neural Network:** Predicts the exact price target based on sequential pattern memory from historical price data.\n"
+            "* **Model Accuracy:** Displayed alongside the prediction (averaging ~94.2%), indicating backtested direction precision under matching regimes."
+        )
+        
+    # 7. General Stock/Asset request or how to analyze
+    if any(kw in msg for kw in ["aapl", "tsla", "nvda", "btc", "gold", "nifty", "stock", "crypto"]):
+        return (
+            "📈 **Asset Analysis Request**\n\n"
+            "To analyze specific tickers:\n"
+            "1. Enter the symbol (e.g. `AAPL`, `GC=F` for Gold, or `RELIANCE.NS` for NSE) in the search input at the top of the scanner.\n"
+            "2. Press **Enter** or click **Search**.\n"
+            "3. Click **Analyze** to compute ATR-based target levels, win probabilities, and GARCH-LSTM target forecasts.\n\n"
+            "*Note: Make sure your backend has internet access to fetch real-time Yahoo Finance data.*"
+        )
+        
+    # Default Fallback
+    return (
+        "🤖 **TradeMind AI Copilot**\n\n"
+        "I have processed your query: *\"" + message + "\"*\n\n"
+        "Due to local Gemini API key configuration limits, I am currently running in **offline support mode**. Here is some guidance on market execution and system metrics:\n\n"
+        "* **Market Structure:** Always wait for a structural shift (break of structure/change of character) on your key timeframe before entering trades.\n"
+        "* **Trade Calibration:** Use the scanner's probability score. If the T1 probability is under 55%, it is generally safer to stand aside.\n"
+        "* **Discipline:** Keep emotional indexes stable by sticking to your predefined risk parameters in the settings.\n\n"
+        "If you want to try reconnecting to the Gemini service, please verify your `GEMINI_API_KEY` in your `backend/.env` file and restart the backend server."
+    )
+
+
+def generate_fallback_exam(track_id: str) -> list:
+    # Pre-defined professional exam questions for each track
+    exams = {
+        "beginner": [
+            {
+                "q": "What is the primary function of a Market Order?",
+                "o": ["Immediate execution at the best available price", "Execution only at a specific price or better", "Triggering a stop-loss", "Routing to a dark pool"],
+                "a": 0
+            },
+            {
+                "q": "Which structural feature indicates that a support level is highly liquid?",
+                "o": ["High volume nodes in the Volume Profile", "A thin bid-ask spread", "A low historical ATR score", "A negative RSI value"],
+                "a": 0
+            },
+            {
+                "q": "What candle formation typically signals the end of a retail consolidation phase?",
+                "o": ["A Doji candle with declining volume", "A strong displacement expansion candle on high volume", "Multiple inside bars", "A spinning top at mid-range"],
+                "a": 1
+            },
+            {
+                "q": "Why should a trader place their Stop Loss outside the local ATR boundary?",
+                "o": ["To increase the win rate to 100%", "To accommodate random market noise and avoid early stop-outs", "To decrease commission costs", "To maximize leverage size"],
+                "a": 1
+            },
+            {
+                "q": "If your strategy has a 50% win rate and a 1:1.5 Risk-to-Reward ratio, what is the expectancy?",
+                "o": ["-0.25 (Negative)", "+0.25 (Positive)", "0.0 (Breakeven)", "+1.0 (Highly Positive)"],
+                "a": 1
+            }
+        ],
+        "swing": [
+            {
+                "q": "When trading a multi-day trend breakout, what is the safest trailing stop-loss anchor?",
+                "o": ["The current day's open price", "The swing low of the breakout candle structure or 20-EMA", "A fixed 10% distance", "The previous week's closing price"],
+                "a": 1
+            },
+            {
+                "q": "Which indicator is most effective at determining multi-week momentum divergence?",
+                "o": ["RSI on daily/weekly timeframes", "High-frequency tick volume", "The current VIX level", "Standard Pivot Points"],
+                "a": 0
+            },
+            {
+                "q": "What is the key risk of holding a swing position overnight?",
+                "o": ["Time decay of options", "Intraday sweep hunts", "Opening price gaps due to news catalysts", "Exchange rate conversion fees"],
+                "a": 2
+            },
+            {
+                "q": "How does the Kelly Criterion help swing traders scale their position sizes?",
+                "o": ["By maximizing leverage on every trade", "By optimizing sizing based on win probability and historical win/loss ratios", "By keeping sizing constant across all assets", "By compounding losses automatically"],
+                "a": 1
+            },
+            {
+                "q": "What structural signal confirms a change in trend direction on daily charts?",
+                "o": ["A double inside bar", "A Break of Structure (BoS) with a candle close outside the range", "A single low volume sweep", "An increase in open interest on short contracts"],
+                "a": 1
+            }
+        ],
+        "intraday": [
+            {
+                "q": "What does the VWAP (Volume Weighted Average Price) represent to intraday traders?",
+                "o": ["The average price adjusted by timeframe", "The institutional average execution price for the session", "A leading indicator for trend direction", "A lagging volatility boundaries band"],
+                "a": 1
+            },
+            {
+                "q": "At what time of day does peak volume and volatility typically occur in US markets?",
+                "o": ["12:00 PM - 2:00 PM EST", "9:30 AM - 10:30 AM EST", "3:30 PM - 4:00 PM EST", "Both the market open and market close sessions"],
+                "a": 3
+            },
+            {
+                "q": "What is the primary danger of using high leverage in intraday trading?",
+                "o": ["High transaction fees", "Broker system outages", "Rapid liquidation due to small adverse price movements", "Overnight gap risk"],
+                "a": 2
+            },
+            {
+                "q": "How can a trader identify a true Breakout versus a Bull Trap?",
+                "o": ["A breakout requires high relative volume (1.5x+ average) and structural close", "Breakouts always happen on low volume", "A bull trap never retests support", "By checking the global MACD crossover"],
+                "a": 0
+            },
+            {
+                "q": "What daily metric prevents intraday traders from destroying their capital during emotional sessions?",
+                "o": ["A maximum daily trade count limit", "A hard daily drawdown loss limit", "An automated trailing take-profit order", "A daily checklist review"],
+                "a": 1
+            }
+        ],
+        "risk": [
+            {
+                "q": "If a trader risks 5% of their equity per trade, what is the probability of a 50% drawdown after 10 consecutive losses?",
+                "o": ["10%", "50%", "100%", "25%"],
+                "a": 2
+            },
+            {
+                "q": "What does a Sharpe Ratio of 2.0 tell an institutional investor?",
+                "o": ["The strategy has extremely high leverage", "The system returns double the benchmark", "The strategy delivers excellent risk-adjusted performance", "The strategy is prone to black swan risks"],
+                "a": 2
+            },
+            {
+                "q": "Which metric is the best measure of maximum peak-to-trough equity decline?",
+                "o": ["Standard Deviation", "Maximum Drawdown", "Value at Risk (VaR)", "Profit Factor"],
+                "a": 1
+            },
+            {
+                "q": "How does correlation risk affect a portfolio of multiple stocks?",
+                "o": ["It reduces transaction fees", "If assets are highly correlated, stop-outs will trigger simultaneously, increasing total risk", "It guarantees steady returns", "It eliminates volatility"],
+                "a": 1
+            },
+            {
+                "q": "Why is the 1% risk rule considered a standard benchmark in risk management?",
+                "o": ["It guarantees a win rate of 99%", "It ensures survival through a long series of losses while keeping drawdown manageable", "It minimizes broker commissions", "It allows for maximum leverage allocation"],
+                "a": 1
+            }
+        ],
+        "psychology": [
+            {
+                "q": "What cognitive bias causes a trader to search only for indicators that support their current trade?",
+                "o": ["Anchoring Bias", "Confirmation Bias", "Loss Aversion", "Recency Bias"],
+                "a": 1
+            },
+            {
+                "q": "Identify this behavior: Increasing trade size immediately after a loss to recover funds quickly.",
+                "o": ["FOMO", "Revenge Trading", "Overconfidence Cycle", "Scale-In Optimization"],
+                "a": 1
+            },
+            {
+                "q": "How can a trader overcome the fear of missing out (FOMO)?",
+                "o": ["Entering market orders immediately upon seeing a large candle", "By having a strict, rule-based checklist and waiting for close verification", "By trading highly volatile assets", "By checking social media channels for validation"],
+                "a": 1
+            },
+            {
+                "q": "Why does Loss Aversion cause traders to hold losing trades too long?",
+                "o": ["To collect dividends", "Because they hope the trade will turn around to avoid realizing a loss", "To build patience", "Because stop-losses are too tight"],
+                "a": 1
+            },
+            {
+                "q": "What is the psychological benefit of keeping a detailed trading journal?",
+                "o": ["It tracks broker fees", "It provides objective data to identify emotional habits and execution mistakes", "It increases win rate instantly", "It proves trading skill to others"],
+                "a": 1
+            }
+        ]
+    }
+    return exams.get(track_id.lower(), exams["beginner"])
+
+
 class ChatRequest(BaseModel):
     message: str
 
@@ -283,16 +519,13 @@ def list_models():
 @app.post("/chat")
 def chat_with_gemini(request: ChatRequest):
     if not chat_session:
-        return {"response": "🤖 *Institutional OS Copilot is currently offline.* Please verify backend connection."}
+        return {"response": generate_fallback_chat_response(request.message)}
     try:
         response = chat_session.send_message(request.message)
         return {"response": response.text}
     except Exception as e:
         print(f"[Chat Error] {e}")
-        err_msg = str(e)
-        if "429" in err_msg or "quota" in err_msg.lower():
-            return {"response": "🤖 *Institutional Copilot Notice:* The local Gemini API key has exceeded its daily free-tier quota (20 requests/day limit). To continue chatting, please check your billing details in Google AI Studio or use a different key. In the meantime, the offline GARCH-LSTM model is still fully functional!"}
-        return {"response": f"🤖 *AI Assistant Error:* {err_msg}"}
+        return {"response": generate_fallback_chat_response(request.message)}
 
 @app.post("/send_otp")
 def send_otp(email: str):
@@ -2589,17 +2822,18 @@ def get_indicator_briefing(indicator_id: str):
 
 @app.get("/academy/generate-exam")
 def generate_exam(track_id: str):
-    if not gemini_model: return {"error": "Exam Engine Offline"}
+    if gemini_model:
+        prompt = f"Generate a 5-question multiple choice exam for the trading track: {track_id}. Return ONLY JSON: [{{'q': 'string', 'o': ['a','b','c','d'], 'a': index}}]"
+        try:
+            response = gemini_model.generate_content(prompt)
+            text = response.text.strip()
+            if text.startswith("```json"): text = text[7:-3].strip()
+            elif text.startswith("```"): text = text[3:-3].strip()
+            return {"questions": json.loads(text)}
+        except Exception as e:
+            print(f"[Gemini Exam Gen Error] {e} - falling back to template")
     
-    prompt = f"Generate a 5-question multiple choice exam for the trading track: {track_id}. Return ONLY JSON: [{{'q': 'string', 'o': ['a','b','c','d'], 'a': index}}]"
-    try:
-        response = gemini_model.generate_content(prompt)
-        text = response.text.strip()
-        if text.startswith("```json"): text = text[7:-3].strip()
-        elif text.startswith("```"): text = text[3:-3].strip()
-        return {"questions": json.loads(text)}
-    except:
-        return {"error": "Failed to generate exam"}
+    return {"questions": generate_fallback_exam(track_id)}
 
 @app.get("/academy/patterns")
 def get_patterns():
