@@ -1,7 +1,9 @@
+import math
+
 try:
-    import pandas as pd
-    import numpy as np
-    from scipy.optimize import minimize
+    import pandas as pd  # type: ignore
+    import numpy as np  # type: ignore
+    from scipy.optimize import minimize  # type: ignore
     HAS_ML_STACK = True
 except ImportError:
     HAS_ML_STACK = False
@@ -71,7 +73,6 @@ def predict_exact_price(price_data):
             forecasted_vol = (0.06 * last_ret_sq + 0.94 * last_var)**0.5
             
             # LSTM-Style decay weights
-            import math
             n = len(returns)
             weights = [math.exp(-1.0 + (i / (n - 1))) for i in range(n)]
             total_w = sum(weights)

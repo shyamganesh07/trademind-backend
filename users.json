@@ -1,19 +1,91 @@
 {
+  "ganesh442006@gmail.com": {
+    "uid": "juhdMHDIa2V3pRDoW5Rif5kTrlC2",
+    "email": "ganesh442006@gmail.com",
+    "name": "Shyam Ganesh C",
+    "pic": "https://lh3.googleusercontent.com/a/ACg8ocKICKrv2KWYUF7oYPO5CGCg0bC6MOZVOl1WmZMU_JXzqzOszqzm=s96-c",
+    "xp": 27900,
+    "balance": 10000.0,
+    "createdAt": "2026-07-26T22:48:19.124498",
+    "password": "shyam@",
+    "total_scans": 37
+  },
   "guest@trademind.com": {
     "email": "guest@trademind.com",
     "name": "Guest",
     "pic": "https://api.dicebear.com/7.x/avataaars/svg?seed=guest@trademind.com&backgroundColor=c0aede",
-    "xp": 18150,
+    "xp": 15150,
     "balance": 10000.0
   },
-  "ganesh442006@gmail.com": {
-    "email": "ganesh442006@gmail.com",
-    "name": "Shyam Ganesh C",
-    "pic": "https://lh3.googleusercontent.com/a/ACg8ocKICKrv2KWYUF7oYPO5CGCg0bC6MOZVOl1WmZMU_JXzqzOszqzm=s96-c",
-    "xp": 25650,
-    "balance": 10000.32,
-    "uid": "juhdMHDIa2V3pRDoW5Rif5kTrlC2",
-    "createdAt": "2026-06-09T20:41:55.250028",
-    "total_scans": 104
+  "test12@gmail.com": {
+    "email": "test12@gmail.com",
+    "name": "test12",
+    "pic": "https://api.dicebear.com/7.x/avataaars/svg?seed=test12@gmail.com&backgroundColor=c0aede",
+    "xp": 150,
+    "balance": 10000.0,
+    "password": "test12",
+    "createdAt": "2026-07-28T16:22:51.915268",
+    "total_scans": 1
+  },
+  "shyamganeshc4292.sse@saveetha.com": {
+    "uid": "ezHs25Rc1UeLMpR2FZdM5kGQnRv1",
+    "email": "shyamganeshc4292.sse@saveetha.com",
+    "name": "SHYAM GANESH C",
+    "pic": "https://lh3.googleusercontent.com/a/ACg8ocKFy6Orr4OVCC_Bg_QT9kp6JMgye_X0aW_fauRgeSnFcO74Pg=s96-c",
+    "xp": 4650,
+    "balance": 10000.0,
+    "createdAt": "2026-07-28T16:24:14.699327",
+    "password": "shyam24",
+    "total_scans": 6
+  },
+  "tamilgaming1780@gmail.com": {
+    "email": "tamilgaming1780@gmail.com",
+    "name": "Tamil Gaming178",
+    "pic": "https://lh3.googleusercontent.com/a/ACg8ocL1FQKgAoP6NpWgXtbiPmJjOzW7dQOKfN9t_yz7VtbaGiJpQA=s96-c",
+    "xp": 1650,
+    "balance": 10000.0,
+    "password": "shyam@@",
+    "createdAt": "2026-07-28T20:51:07.688043",
+    "total_scans": 2,
+    "uid": "WYl8zNAyIJWjVfJwQg2KFuRzA1x1"
+  },
+  "test17@gmail.com": {
+    "email": "test17@gmail.com",
+    "name": "test17",
+    "pic": "https://api.dicebear.com/7.x/avataaars/svg?seed=test17@gmail.com&backgroundColor=c0aede",
+    "xp": 900,
+    "balance": 10000.0,
+    "password": "test17",
+    "createdAt": "2026-07-29T21:16:09.204109",
+    "total_scans": 1
+  },
+  "test19@gmail.com": {
+    "email": "test19@gmail.com",
+    "name": "test19",
+    "pic": "https://api.dicebear.com/7.x/avataaars/svg?seed=test19@gmail.com&backgroundColor=c0aede",
+    "xp": 3150,
+    "balance": 10000.0,
+    "password": "test19",
+    "createdAt": "2026-07-29T21:17:16.003476",
+    "total_scans": 4
+  },
+  "test121@gmail.com": {
+    "email": "test121@gmail.com",
+    "name": "test121",
+    "pic": "https://api.dicebear.com/7.x/avataaars/svg?seed=test121@gmail.com&backgroundColor=c0aede",
+    "xp": 1650,
+    "balance": 10000.0,
+    "password": "test121",
+    "createdAt": "2026-07-29T22:48:38.983158",
+    "total_scans": 2
+  },
+  "test134@gmail.com": {
+    "email": "test134@gmail.com",
+    "name": "test134",
+    "pic": "https://api.dicebear.com/7.x/avataaars/svg?seed=test134@gmail.com&backgroundColor=c0aede",
+    "xp": 150,
+    "balance": 10000.0,
+    "password": "test134",
+    "createdAt": "2026-07-30T09:13:53.334222"
   }
 }
